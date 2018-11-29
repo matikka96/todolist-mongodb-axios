@@ -16,7 +16,7 @@ Index.html contains all the front-end elements of the app. Data is requested fro
 1) Download project from Github and build it in Docker.
 COMMAND: 
 ```
-docker build -t todolistserver https://github.com/matikka96/Dockerfile-demo.git
+docker build -t todolistserver https://github.com/matikka96/todolist-mongodb-axios.git
 ```
 This will create docker image named "todolistserver".
 
