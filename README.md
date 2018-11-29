@@ -10,7 +10,7 @@ API has been made using expressjs framework and runs on node in file server.js. 
 * Update element's status				[POST, params: {text: <todo to update>, done: <false / true>}]
 
 Each of the operations above creates connection to MongoDB accordingly.
-Index.html contains all the front-end elements of the app. Data is requested from API using axios module, which is AJAX compatible. List of the task's are rendered on Vuejs. Styling has been done usinf materializecss.
+Index.html contains all the front-end elements of the app. Data is requested from API using axios module, which is AJAX compatible. List of the task's is rendered on Vuejs. Styling has been done using materializecss.
 
 ## Installation
 1) Download project from Github and build it in Docker.
