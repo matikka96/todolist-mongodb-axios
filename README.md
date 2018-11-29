@@ -23,6 +23,6 @@ This will create docker image named "todolistserver".
 2) Final step is to run above image.
 COMMAND: 
 ```
-docker run -p 333:8080 -d todolistserver
+docker run -p 333:3000 -d todolistserver
 ```
 Now your app is seen here: http://localhost:333
