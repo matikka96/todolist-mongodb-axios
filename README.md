@@ -5,9 +5,9 @@ This is a school assignment.
 ## What has been done?
 API has been made using expressjs framework and runs on node in file server.js. It can handle operations such as:
 * List all the elements in database. 	[GET]
-* Add new element						[POST. params: {text: <new todo>}]
-* Remove element						[POST. params: {text: <todo to remove>}]
-* Update element's status				[POST, params: {text: <todo to update>, done: <false / true>}]
+* Add new element						[POST. params: {text: "task to add"}]
+* Remove element						[POST. params: {text: "task to remove"}]
+* Update element's status				[POST, params: {text: "task to update", done: false/true}]
 
 Each of the operations above creates connection to MongoDB accordingly.
 Index.html contains all the front-end elements of the app. Data is requested from API using axios module, which is AJAX compatible. List of the task's is rendered on Vuejs. Styling has been done using materializecss.
