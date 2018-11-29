@@ -1,4 +1,4 @@
-#WWW-applications – week 9
+# WWW-applications – week 9
 
 This is a school assignment. 
 
