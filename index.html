@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+    	/** {outline: 1px solid red;}*/
+    </style>
 </head>
 
 <body>
@@ -87,29 +91,25 @@
 		Vue.component('uncompleted', {
 			props: ['text', 'done', 'index', ],
 			template: `
-				<div class="collection-item">
-					<label>
-				    	<input id="checkbox" type="checkbox" v-on:click="$emit('act-update', {text, done})">
+				<div class="collection-item valign-wrapper row">
+					<label class="valign-wrapper col s10">
+						<i class="material-icons black-text left" v-on:click="$emit('act-update', {text, done})">check_box_outline_blank</i>						
 				        <span>{{text}}</span>
 				    </label>
-				    <div v-on:click="$emit('act-remove', text)" class="secondary-content">
-						<i class="material-icons red-text">close</i>
-					</div>
-				</div>				
+					<i v-on:click="$emit('act-remove', text)" class=" right-align material-icons red-text col s2">close</i>
+				</div
 			`
 		})
 		Vue.component('completed', {
 			props: ['text', 'done', 'index'],
 			template: `
-				<div class="collection-item">
-					<label>
-				    	<input id="checkbox" type="checkbox" checked="unchecked" v-on:click="$emit('act-update', {text, done})">
+				<div class="collection-item valign-wrapper row">
+					<label class="valign-wrapper col s10">
+						<i class="material-icons black-text left" v-on:click="$emit('act-update', {text, done})">check</i>						
 				        <span>{{text}}</span>
 				    </label>
-				    <div v-on:click="$emit('act-remove', text)" class="secondary-content">
-						<i class="material-icons red-text">close</i>
-					</div>
-				</div>
+					<i v-on:click="$emit('act-remove', text)" class=" right-align material-icons red-text col s2">close</i>
+				</div
 			`
 		})
 		let app = new Vue({
@@ -172,7 +172,7 @@
 					console.log(s.display)
 				},
 				updateList() {
-					M.toast({html: 'Database request...', displayLength: '1000'})
+					M.toast({html: '<i class="material-icons medium">sync</i>', inDuration: '0'})
 					axios.get('/load')
 					  .then(function (response) {
 					  	app.items = [];
@@ -187,6 +187,7 @@
 					    // handle error
 					    console.log(error);
 					  })
+					M.Toast.dismissAll();
 				}
 			},
 			mounted() {
